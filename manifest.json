@@ -1,0 +1,30 @@
+{
+	"name": "catchapi-devtool",
+	"version": "1.0.0",
+	"description": "获取网络请求",
+	"manifest_version": 3,
+	"permissions": [
+		"declarativeNetRequest",
+		"declarativeNetRequestFeedback",
+		"scripting",
+		"tabs",
+		"activeTab"
+	],
+	"host_permissions": ["https://omofun.in/vod/play/*"],
+	"devtools_page": "devtools/devtool.html",
+	"background": {
+		"service_worker": "background/background.js"
+	},
+	"declarative_net_request": {
+		"rule_resources": [{
+			"id": "blockLinks",
+			"enabled": true,
+			"path": "/rules/request-rule.json"
+		}]
+	},
+	"action": {
+		"default_icon": "/img/star.png",
+		"default_popup": "/popup/popup.html",
+		"default_title": "获取网页请求链接"
+	}
+}
